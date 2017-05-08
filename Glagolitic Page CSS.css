@@ -1,0 +1,21 @@
+body {
+    background-color: #191919;
+    color: #F5F5F5;
+}
+a {
+  color: rgb(184, 137, 48);
+}
+h1, h2, h3, h4 {
+   color: rgb(190, 143, 54);
+}
+input[type="button"] {
+  color: rgb(184, 137, 48);
+  background-color: #191919;
+  border:1px solid;
+  border-color: #696 #363 #363 #696; 
+  padding: 10px;
+  font-size: 16px;
+}
+input[type="button"]:hover {
+    color: #d5ac5f;
+}
