@@ -1,0 +1,205 @@
+<style>
+body {
+    background-color: #191919;
+    color: #F5F5F5;
+}
+a {
+  color: rgb(184, 137, 48);
+}
+h1, h2, h3, h4 {
+   color: rgb(190, 143, 54);
+}
+input[type="button"] {
+  color: rgb(184, 137, 48);
+  background-color: #191919;
+  border:1px solid;
+  border-color: #696 #363 #363 #696; 
+  padding: 10px;
+  font-size: 16px;
+}
+input[type="button"]:hover {
+    color: #d5ac5f;
+}
+</style>
+<script>
+function moveCharacters(num) { 
+    var txt=document.getElementById("alphabet").value; 
+    txt=txt + num; 
+    document.getElementById("alphabet").value=txt; 
+    } 
+var mapObj = {
+  Ⰰ: "А",
+  ⰰ: "а",
+  Ⰱ: "Б",
+  ⰱ: "б",
+  Ⰲ: "В",
+  ⰲ: "в",
+  Ⰳ: "Г",
+  ⰳ: "г",
+  Ⰴ: "Д",
+  ⰴ: "д",
+  Ⰵ: "Є",
+  ⰵ: "є",
+  Ⰶ: "Ж",
+  ⰶ: "ж",
+  Ⰷ: "Ѕ",
+  ⰷ: "ѕ",
+  Ⰸ: "З",
+  ⰸ: "з",
+  Ⰹ: "И",
+  ⰹ: "и",
+  Ⰺ: "Й",
+  ⰺ: "й",
+  Ⰻ: "І",
+  ⰻ: "i",
+  Ⰼ: "Ћ",
+  ⱞ: "ћ",
+  Ⰽ: "К",
+  ⰽ: "k",
+  Ⰾ: "Л",
+  ⰾ: "Л",
+  Ⰿ: "М",
+  ⰿ: "m",
+  Ⱀ: "Н",
+  ⱀ: "h",
+  Ⱁ: "О",
+  ⱁ: "o",
+  Ⱂ: "П",
+  ⱂ: "п",
+  Ⱃ: "Р",
+  ⱃ: "p",
+  Ⱄ: "С", 
+  ⱄ: "c",
+  Ⱅ: "Т",
+  ⱅ: "t",
+  Ⱆ: "У",
+  ⱆ: "у",
+  Ⱇ: "Ф",
+  ⱇ: "ф",
+  Ⱈ: "Х",
+  ⱈ: "x",
+  Ⱉ: "Ѡ",
+  ⱉ: "ѡ",
+  Ⱋ: "Щ",
+  ⱋ: "щ",
+  Ⱌ: "Ц",
+  ⱌ: "ц",
+  Ⱍ: "Ч",
+  ⱍ: "ч",
+  Ⱎ: "Ш",
+  ⱎ: "ш",
+  Ⱏ: "Ъ",
+  ⱏ: "ъ",
+  Ⱐ: "Ь",
+  ⱐ: "ь",
+  Ⱑ: "Ѣ",
+  ⱑ: "ѣ",
+  Ⱖ: "Ё",
+  ⱖ: "Ё",
+  Ⱓ: "Ю", 
+  ⱓ: "Ю",
+  Ⱔ: "Ѧ",
+  ⱔ: "ѧ",
+  Ⱗ: "Ѩ",
+  ⱗ: "ѩ",
+  Ⱘ: "Ѫ",
+  ⱘ: "ѫ",
+  Ⱙ: "Ѭ",
+  ⱙ: "ѭ",
+  Ⱚ: "Ѳ",
+  ⱚ: "ѳ",
+  Ⱛ: "Ѵ",
+  ⱛ: "v",
+};
+function glagolitic() {
+  var str = document.getElementById('alphabet').value;
+  var re = new RegExp(Object.keys(mapObj).join("|"), "g");
+  str = str.replace(re, function(matched) {
+    return mapObj[matched.valueOf()];
+  });
+  document.getElementById('cyrillic_output').innerHTML = str;
+}
+function translatetoGoogle() {
+    var q = document.getElementById('cyrillic_output').innerHTML
+    window.open('https://translate.google.com/#sr/en/'+q);
+}
+</script>
+
+<h1>Glagolitic Translator</h1>
+<input type="button" value="Ⰰ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰱ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰲ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰳ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰴ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰵ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰶ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰷ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰸ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰺ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰻ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰼ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰽ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰾ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⰿ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱀ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱁ" name="no" onclick="moveCharacters(this.value)">
+<br><br>
+<input type="button" value="Ⱂ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱃ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱄ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱅ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱆ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱇ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱈ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱉ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱋ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱌ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱍ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱏ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱐ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱑ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱖ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱓ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱔ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱗ" name="no" onclick="moveCharacters(this.value)">
+<br><br>
+<input type="button" value="Ⱘ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱙ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱚ" name="no" onclick="moveCharacters(this.value)">
+<input type="button" value="Ⱛ" name="no" onclick="moveCharacters(this.value)"> <br>
+
+<h2>Glagolitic</h2>
+<form>
+  <textarea id='alphabet' value='' rows='5' cols ='50'></textarea>
+</form>
+<br>
+<br>
+
+<input onclick='glagolitic()' type='button' value='Translate to Cyrillic'>
+<h2>Cyrillic</h2>
+<textarea readonly id='cyrillic_output' rows='5' cols ='50'></textarea>
+<br><br>
+
+<input onclick="translatetoGoogle()" type ='button' value='Translate to English via Google Translate (opens in new window)'>
+
+
+
+<h3>How It Works</h3>
+<p>The 'translator' takes Glagolitic letters and converts them into their Cyrillic counterparts (<a href='https://en.wikipedia.org/wiki/Glagolitic_script#Characteristics'>courtesey of Wikipedia</a>). You can either use the on-screen buttons, paste the text you want to translate in (try Ⰳⰾⰰⰳⱁⰾⰻⱌⰰ), or maybe you happen to have a Glagolitic keyboard handy.</p>
+<h3>Tips & Issues</h3>
+<ul>
+  <li>Line breaks will not copy over if using the "Translate to English via Google Translate", if you want to translate multiple lines, translate to Cyrillic and then paste manually into Google Translate.</li>
+  <li>Serbo-Croatian is the default for translating into English, as I have found this usually leads to the most accurate results</li>
+  <li>The translations are not perfect (usually), but you should be able to get an idea of what the text says.</li>
+  <li>The character <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Glagolitic_ot.svg/744px-Glagolitic_ot.svg.png' height='40px' style="background-color: white;"> shows up as Ⱉ in unicode.</li>
+</ul>
+<h3>Examples</h3>
+<img src='http://hydra-media.cursecdn.com/witcher.gamepedia.com/9/9a/Tw2_poster_geralt.png' height='auto'>
+<br><sub>Screenshot from <i>The Witcher 2: Assassins of Kings</i>,  © 2011 CD Projekt RED</sub>
+<p>We can make out the text at the top of this picture, the characters are:</p><span>ⰙⰀⰐⰕⰅⰄ</span><br><span>ⰕⰘⰑⰖⰔⰀⰐⰄ ⰑⰓⰅⰐⰔ</span><p> If we convert these characters to Cyrillic, we get:</p><span>ѠАНТЄД</span><br><span>ТХОУСАНД ОРЄНС</span>
+<br>
+<p>As mentioned above, unfortunately line breaks do not carry over into Google Translate automatically, so we'll have to manually paste it in. </p>
+<br>
+<img src='
+https://s16.postimg.org/szdedikd1/Ws_Oq_Zk_O.png' width='75%'>
+<p>And we get our result, it's rough but we can easily tell that our poor Geralt is the star of a WANTED poster and has a 1000 Oren (the currency of this area of the Witcher world) bounty on his head.</p>
