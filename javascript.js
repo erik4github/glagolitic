@@ -1,0 +1,101 @@
+﻿function moveCharacters(num) { 
+    var txt=document.getElementById("alphabet").value; 
+    txt=txt + num; 
+    document.getElementById("alphabet").value=txt; 
+    } 
+var mapObj = {
+  Ⰰ: "А",
+  ⰰ: "а",
+  Ⰱ: "Б",
+  ⰱ: "б",
+  Ⰲ: "В",
+  ⰲ: "в",
+  Ⰳ: "Г",
+  ⰳ: "г",
+  Ⰴ: "Д",
+  ⰴ: "д",
+  Ⰵ: "Є",
+  ⰵ: "є",
+  Ⰶ: "Ж",
+  ⰶ: "ж",
+  Ⰷ: "Ѕ",
+  ⰷ: "ѕ",
+  Ⰸ: "З",
+  ⰸ: "з",
+  Ⰹ: "И",
+  ⰹ: "и",
+  Ⰺ: "Й",
+  ⰺ: "й",
+  Ⰻ: "І",
+  ⰻ: "i",
+  Ⰼ: "Ћ",
+  ⱞ: "ћ",
+  Ⰽ: "К",
+  ⰽ: "k",
+  Ⰾ: "Л",
+  ⰾ: "Л",
+  Ⰿ: "М",
+  ⰿ: "m",
+  Ⱀ: "Н",
+  ⱀ: "h",
+  Ⱁ: "О",
+  ⱁ: "o",
+  Ⱂ: "П",
+  ⱂ: "п",
+  Ⱃ: "Р",
+  ⱃ: "p",
+  Ⱄ: "С", 
+  ⱄ: "c",
+  Ⱅ: "Т",
+  ⱅ: "t",
+  Ⱆ: "У",
+  ⱆ: "у",
+  Ⱇ: "Ф",
+  ⱇ: "ф",
+  Ⱈ: "Х",
+  ⱈ: "x",
+  Ⱉ: "Ѡ",
+  ⱉ: "ѡ",
+  Ⱋ: "Щ",
+  ⱋ: "щ",
+  Ⱌ: "Ц",
+  ⱌ: "ц",
+  Ⱍ: "Ч",
+  ⱍ: "ч",
+  Ⱎ: "Ш",
+  ⱎ: "ш",
+  Ⱏ: "Ъ",
+  ⱏ: "ъ",
+  Ⱐ: "Ь",
+  ⱐ: "ь",
+  Ⱑ: "Ѣ",
+  ⱑ: "ѣ",
+  Ⱖ: "Ё",
+  ⱖ: "Ё",
+  Ⱓ: "Ю", 
+  ⱓ: "Ю",
+  Ⱔ: "Ѧ",
+  ⱔ: "ѧ",
+  Ⱗ: "Ѩ",
+  ⱗ: "ѩ",
+  Ⱘ: "Ѫ",
+  ⱘ: "ѫ",
+  Ⱙ: "Ѭ",
+  ⱙ: "ѭ",
+  Ⱚ: "Ѳ",
+  ⱚ: "ѳ",
+  Ⱛ: "Ѵ",
+  ⱛ: "v",
+};
+function glagolitic() {
+  var str = document.getElementById('alphabet').value;
+  var re = new RegExp(Object.keys(mapObj).join("|"), "g");
+  str = str.replace(re, function(matched) {
+    return mapObj[matched.valueOf()];
+  });
+  document.getElementById('cyrillic_output').innerHTML = str;
+}
+function translatetoGoogle() {
+    var q = document.getElementById('cyrillic_output').innerHTML
+    window.open('https://translate.google.com/#sr/en/'+q);
+}
